@@ -12,7 +12,7 @@ It includes evaluation pipelines for:
 ## Installation
 
 1) Clone the repository:
-https://github.com/icdm-anon-2026/Aumann-SHAP
+https://github.com/ecml-anon-2026/Aumann-SHAP
 
 2) Install dependencies (from the repository root folder):
 pip install -r requirements.txt
