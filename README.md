@@ -4,6 +4,7 @@ This repository contains the code required to reproduce the experiments presente
 
 It includes evaluation pipelines for:
 - **German Credit** (tabular counterfactual attribution + interaction analysis)
+- **UCI Heart Disease** (medical tabular counterfactual interaction + sign-error example)
 - **MNIST (1 → 7)** (pixel attributions, heatmaps, patch test, global explanations)
 <img width="1393" height="331" alt="image" src="https://github.com/user-attachments/assets/e8e5f9d5-4b84-447d-a8e3-9af4aa3fa148" />
 
@@ -23,6 +24,12 @@ pip install -r requirements.txt
 
 German Credit (primary):
 python experiments/run_german_credit.py --task local
+
+Heart Disease (minimal):
+python experiments/heart_disease/heart_minimal.py
+
+Heart Disease (paper figure):
+python experiments/heart_disease/heart_figure.py
 
 MNIST (primary):
 python experiments/run_mnist.py --task patchtest
@@ -46,7 +53,10 @@ MNIST:
 - patchtest
 - global
 - globalheat
-
+- 
+Heart Disease:
+- heart_minimal.py
+- heart_figure.py
 ---
 
 ## Reproducibility / Execution order (IMPORTANT)
@@ -65,7 +75,10 @@ Use the documented order here:
 - German Credit uses a pretrained cached model included at:
   experiments/german_credit/cache/models_split_rs1.joblib
 - MNIST training can be skipped if the checkpoint already exists.
-
+- Heart Disease reproduces the UCI Cleveland medical counterfactual example from the paper, focusing on the interaction pot:
+  chol, thalach, oldpeak.
+- `heart_minimal.py` runs the lightweight numerical example.
+- `heart_figure.py` generates the paper-style figure.
 ---
 
 ## Package (optional)
